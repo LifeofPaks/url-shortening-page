@@ -1,0 +1,331 @@
+@import "../../styles/Responsive.scss";
+@import "../../styles//Variables.scss";
+
+.main {
+  position: relative;
+  margin-top: 6rem;
+  padding-inline: 10%;
+  padding-top: 5rem;
+  padding-bottom: 10%;
+  background: #d3bbd52e;
+
+@include Mobile{
+    padding-inline: 2rem;
+    padding-bottom: 20%;
+}
+
+  .searchBox {
+    position: absolute;
+    width: 80%;
+    height: 160px;
+    top: -80px;
+    background: #000;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    padding-inline: 4rem;
+    gap: 1.5rem;
+    background: $Dark-Violet;
+    background-image: url(../../images/bg-shorten-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include Mobile{
+        width: calc(100% - 4rem);
+        flex-direction: column;
+        padding-inline: 1rem;
+        padding-block: 1rem;
+        gap: 1rem;
+        height: unset;
+        background-image: url(../../images/bg-shorten-mobile.svg);
+        background-position: 150% 20%;
+        background-size: 80%;
+    }
+
+    input {
+      width: 100%;
+      background: #fff;
+      padding: 1.2rem 2rem;
+      border-radius: 0.5rem;
+      font-size: 1.2rem;
+      height: 65px;
+
+      &::placeholder {
+        color: $Grayish-Violet;
+      }
+
+      &.error{
+        border: 2px solid red;
+
+        &::placeholder {
+            color: red;
+          }
+      }
+
+      @include Mobile{
+        height: 50px;
+        font-size: 1rem;
+        padding: 1rem;
+    }
+    }
+
+    button {
+      width: 200px;
+      padding: 1.1rem;
+      font-size: 1.2rem;
+      border-radius: 0.5rem;
+      height: 65px;
+      transition: .3s;
+
+      &:hover{
+        transform: scale(1.02);
+      }
+
+      @include Mobile{
+        width: 100%;
+        height: 50px;
+        font-size: 1rem;
+    }
+    }
+
+    .errorText{
+        font-size: 12px;
+        color: red;
+        font-style: italic;
+        position: absolute;
+        bottom: 1rem;
+
+        @include Mobile{
+            bottom: -1rem;
+            left: 5px;
+            font-size: 10px;
+        }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5rem;
+
+    @include Mobile{
+        margin-top: 1rem;
+    }
+
+    .outputWrapper{
+        margin-bottom: 10%;
+        width: 100%;
+
+        .output{
+            width: 100%;
+            padding: 1.5rem 2rem;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+
+            @include Mobile{
+                flex-direction: column;
+                padding: 0;
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+
+            .linkContainer{
+                @include Mobile{
+                    width: 100%;
+                }
+
+                p{
+                    color: $Dark-Violet;
+                    @include Mobile{
+                        width: 100%;
+                        text-overflow: ellipsis;
+                        padding: 1rem;
+                        text-align: left;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        
+                    }
+                }
+            }
+           
+
+            .shortened{
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+
+                @include Mobile{
+                    flex-direction: column;
+                    padding: 0;
+                    width: 100%;
+                    gap: 0rem;
+                }
+
+                p{
+                    color: $Cyan;
+                    @include Mobile{
+                        border-top: .5px solid #ccc;
+                        width: 100%;
+                        padding: 1rem;
+
+                    }
+                }
+            }
+
+            button{
+                width: 100px;
+                padding-block: .7rem;
+                border-radius: 10px;
+                font-size: 1rem;
+
+                @include Mobile{
+                    width: 94%;
+                    margin-inline: auto;
+                    margin-bottom: 1rem;
+                }
+
+                &.primaryBtn{
+                    transition: .3s;
+
+                    &:hover{
+                        opacity: .5;
+                    }
+                }
+
+                &.copied{
+                    background: $Very-Dark-Violet;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .heading {
+        @include Mobile{
+            text-align: center;
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+      h2 {
+        font-size: 2.5rem;
+        color: $Dark-Violet;
+        margin-bottom: 1rem;
+
+        @include Mobile{
+            font-size: 1.8rem;
+        }
+      }
+
+      p {
+        width: 460px;
+        text-align: center;
+        line-height: 25px;
+
+        @include Mobile{
+            width: 100%;
+        }
+      }
+    }
+
+    .cardWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1%;
+      position: relative;
+
+      @include Mobile{
+        flex-direction: column;
+        margin-top: 3rem;
+        text-align: center;
+    }
+
+      .hr{
+        width: 100%;
+        height: 8px;
+        background: $Cyan;
+        position: absolute;
+        z-index: -1;
+
+        @include Mobile{
+            display: none;
+        }
+      }
+
+      .vr{
+        display: none;
+        height: 100%;
+        width: 8px;
+        background: $Cyan;
+        position: absolute;
+        z-index: -1;
+
+        @include Mobile{
+            display: block;
+        }
+      }
+
+      .card {
+        background: #fff;
+        padding-inline: 1.5rem;
+        padding-bottom: 2.5rem;
+        border-radius: 5px;
+
+        @include Mobile{
+            padding-inline: 1rem;
+        }
+
+
+        &.s2{
+            margin-top: 5rem;
+             @include Mobile{
+                margin-top: 3rem;
+        }
+        }
+
+        &.s3{
+            margin-top: 10rem;
+             @include Mobile{
+                margin-top: 3rem;
+        }
+        }
+
+        .imgWrapper{
+            width: 80px;
+            height: 80px;
+            background: $Dark-Violet;
+            border-radius: 50%;
+            display: grid;
+            place-content: center;
+            margin-top: -40px;
+
+            @include Mobile{
+                margin-inline: auto;
+            }
+
+        }
+
+        h3{
+            font-size: 1.4rem;
+            color: $Very-Dark-Blue;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p{
+            font-size: .98rem;
+        }
+      }
+    }
+  }
+}

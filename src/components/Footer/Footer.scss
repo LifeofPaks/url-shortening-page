@@ -1,0 +1,76 @@
+@import '../../styles/Responsive.scss';
+@import '../../styles//Variables.scss';
+
+.footer{
+    padding-inline: 10%;
+    padding-block: 5%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: $Very-Dark-Violet;
+    gap: 20rem;
+
+    @include Mobile{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-block: 18%;
+        gap: 3rem;
+    }
+
+    p{
+        color: #fff;
+        margin-bottom: 1.5rem;
+    }
+
+    li{
+        color: $Grayish-Violet;
+        margin-bottom: .5rem;
+        transition: .3s;
+        cursor: pointer;
+        font-size: 13px;
+
+        &:hover{
+            color: #fff;
+        }
+    }
+
+    .left{
+        img{
+            filter: brightness(0) invert(1);
+        }
+    }
+
+    .right{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+        font-size: 14px;
+
+        @include Mobile{
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+        }
+    
+
+        .socials{
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-size: 24px;
+            color: #fff;
+
+            .icon{
+                transition: .3s;
+                cursor: pointer;
+
+                &:hover{
+                    color: $Cyan;
+                    transform: translateY(-5px);
+                }
+            }
+        }
+    }
+}

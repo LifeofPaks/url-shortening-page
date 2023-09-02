@@ -1,0 +1,247 @@
+@import "../../styles/Responsive.scss";
+@import "../../styles//Variables.scss";
+@import 'animate.css';
+
+.home {
+    position: relative;
+    .mobileNav{
+        display: none;
+        padding-block: 2rem 1rem;
+        padding-inline: 2rem;
+
+        img{
+            width: 100px;
+        }
+
+        .menuIcons{
+
+            img{
+                width: 25px;
+                cursor: pointer;
+            }
+        }
+
+        @include Mobile{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+  nav {
+    padding-block: 3rem;
+    padding-inline: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include Mobile{
+        display: none;
+    }
+
+    &.show{
+        @include Mobile{
+            position: absolute;
+            flex-direction: column;
+            background: $Dark-Violet;
+            z-index: 5;
+            display: flex;
+            width: calc(100% - 4rem);
+            transform: translateX(-50%);
+            left: 50%;
+            border-radius: .5rem;
+
+        }
+    }
+
+  
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+
+      @include Mobile{
+        width: 100%;
+    }
+
+      img{
+        @include Mobile{
+            display: none;
+        }
+      } 
+
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+
+        @include Mobile{
+            flex-direction: column;
+            padding-bottom: 2rem;
+            border-bottom: .5px solid #ccc;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+       
+
+        li {
+          color: $Grayish-Violet;
+          cursor: pointer;
+          transition: 0.3s;
+          font-size: 14px;
+
+          @include Mobile{
+            color: #fff;
+        }
+
+          &:hover {
+            color: $Very-Dark-Blue;
+          }
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      @include Mobile{
+        flex-direction: column;
+        width: 100%;
+    }
+    @include Mobile{
+        flex-direction: column;
+    }
+
+
+      button {
+
+        @include Mobile{
+            width: 100%;
+            color: #fff;
+        }
+        &.btn {
+          color: $Grayish-Violet;
+          transition: 0.3s;
+
+          @include Mobile{
+            color: #fff;
+        }
+
+          &:hover {
+            color: $Cyan;
+          }
+        }
+
+        &.primaryBtn {
+          padding: 0.7rem 1.5rem;
+          border-radius: 30px;
+          border: 0.5px solid $Cyan;
+
+          transition: 0.3s;
+
+          &:hover {
+            color: $Cyan;
+            background: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .hero {
+    display: flex;
+    align-items: center;
+    padding-block: 3rem;
+    padding-left: 10%;
+    overflow-x: hidden;
+
+    @include Mobile{
+        flex-direction: column-reverse;
+        padding-left: 2rem;
+        padding-block: 0rem 1rem;
+    }
+
+
+    .left {
+      width: 60%;
+
+      @include Mobile{
+        width: 100%;
+        margin-top: 2rem;
+        text-align: center;
+        padding-right: 2rem;
+    }
+
+      h1 {
+        font-size: 5rem;
+        line-height: 90px;
+        margin-bottom: .5rem;
+        color: $Very-Dark-Blue;
+        animation: fadeIn 2s 1s forwards;
+        opacity: 0;
+
+        @include Mobile{
+            font-size: 2rem;
+            line-height: 40px;
+        }
+
+      
+      }
+
+      p{
+        width: 600px;
+        font-size: 1.4rem;
+        animation: fadeInUp 2s 1.1s forwards;
+        opacity: 0;
+
+        @include Mobile{
+            width: 100%;
+            font-size: 16px;
+        }
+      }
+
+      button{
+        margin-top: 3rem;
+        width: 200px;
+        padding-block: 1.2rem;
+        border-radius: 30px;
+        font-size: 1.2rem;
+        animation: fadeInUp 2s 1.8s forwards;
+        opacity: 0;
+
+        @include Mobile{
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+        }
+      }
+    }
+
+    .right {
+        width: 50%;
+        animation: backInRight 2s 2.2s forwards;
+        opacity: 0;
+
+        @include Mobile{
+            overflow-x: hidden;
+        }
+
+        img{
+
+            @include Mobile{
+                width: 130%;
+    
+            }
+        }
+
+        @include Mobile{
+            width: 100%;
+            overflow: hidden;
+
+        }
+    }
+  }
+}

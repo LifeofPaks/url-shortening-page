@@ -1,0 +1,35 @@
+@import '../../styles/Responsive.scss';
+@import '../../styles//Variables.scss';
+
+.boost{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: $Dark-Violet;
+    background-image: url(../../images/bg-boost-desktop.svg);
+    padding-block: 5% 3%;   
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include Mobile{
+        padding-block: 22%; 
+    }
+
+    h2{
+        font-size: 2.5rem;
+        color: #fff;
+        animation:  pulse 2s 2s infinite;
+        @include Mobile{
+            font-size: 1.7rem;
+        }
+    }
+
+    button{
+        width: 200px;
+        padding-block: 1.2rem;
+        border-radius: 30px;
+        font-size: 1.2rem;
+        margin-top: 2rem;
+    }
+}
